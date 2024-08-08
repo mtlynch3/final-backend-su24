@@ -1,5 +1,7 @@
 import { db } from './database/index.js';
 import { seedDb } from './database/models/index.js';
+import { apiRouter } from './routes/index.js';
+
 import express from "express";
 import cors from "cors";
 
@@ -18,6 +20,9 @@ app.get('/favicon.ico', (req, res) => res.status(204));
 app.get("/hello", (request, response) => {
   response.send("Hello, world!")
 });
+
+//mount api router so requests are sent those routes
+app.use("/api", apiRouter);
 
 // Handle page not found:
 // gets triggered when a request is made to

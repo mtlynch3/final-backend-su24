@@ -9,6 +9,7 @@ export const Task = db.define("task", {
 
   priority: {
     type: Sequelize.INTEGER,
+    defaultValue: 1,
   },
 
   completed: {
