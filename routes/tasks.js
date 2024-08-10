@@ -19,7 +19,7 @@ router.get('/', async (req, res, next) => {
 /***** DELETE TASK: *****/
 router.delete("/:id", function (req, res, next) {
   Task.destroy({ where: { id: req.params.id } })
-    .then(() => res.status(200).json("Deleted a task!"))
+    .then(() => res.status(200).json("TASK DELETED"))
     .catch((err) => next(err));
 });
 
